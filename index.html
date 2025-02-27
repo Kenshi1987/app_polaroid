@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de Fotos Polaroid</title>
+  <!-- Google Fonts: Roboto y Lobster -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 5.15.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light-mode">
+  <!-- Header con menú centrado en tres filas -->
+  <header class="no-print">
+    <div class="header-container">
+      <!-- Fila 1: Selector de idioma -->
+      <div class="header-language">
+        <div class="language-menu">
+          <span id="selectedLanguage">
+            <img src="https://flagcdn.com/24x18/es.png" alt="Español">
+            <span class="lang-text">Español</span>
+          </span>
+          <ul id="languageDropdown" class="hidden">
+            <li data-lang="es"><img src="https://flagcdn.com/24x18/es.png" alt="Español"><span class="lang-text">Español</span></li>
+            <li data-lang="en"><img src="https://flagcdn.com/24x18/gb.png" alt="English"><span class="lang-text">English</span></li>
+            <li data-lang="pt"><img src="https://flagcdn.com/24x18/pt.png" alt="Português"><span class="lang-text">Português</span></li>
+            <li data-lang="zh"><img src="https://flagcdn.com/24x18/cn.png" alt="中文"><span class="lang-text">中文</span></li>
+            <li data-lang="ja"><img src="https://flagcdn.com/24x18/jp.png" alt="日本語"><span class="lang-text">日本語</span></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Fila 2: Título -->
+      <div class="header-title">
+        <h1><i class="fas fa-camera-retro"></i> Polaroid Generator</h1>
+      </div>
+      <!-- Fila 3: Controles -->
+      <nav class="controls" id="controlsNav">
+        <div class="control">
+          <label for="paperSize">Tamaño de Hoja:</label>
+          <select id="paperSize">
+            <option value="a4">A4</option>
+            <option value="legal">Legal</option>
+            <option value="oficio">Oficio</option>
+            <option value="carta">Carta</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="photoCount">Cantidad de Fotos:</label>
+          <select id="photoCount">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="modeToggle">Modo:</label>
+          <!-- Solo el ícono -->
+          <div id="modeToggle" class="mode-icon"><i class="fas fa-moon"></i></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Canvas adaptable al tamaño de papel -->
+    <div id="canvasContainer" class="canvas a4">
+      <!-- Aquí se genera la grilla de polaroids -->
+    </div>
+    <div class="action-buttons no-print">
+      <button id="printSaveBtn"><i class="fas fa-print"></i> <span class="btn-text">Imprimir / Guardar</span></button>
+      <button id="globalLoadBtn"><i class="fas fa-images"></i> <span class="btn-text">Cargar Todas</span></button>
+    </div>
+  </main>
+
+  <footer class="no-print">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://cafecito.app" target="_blank" title="Cafecito">
+        <i class="fas fa-mug-hot"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
